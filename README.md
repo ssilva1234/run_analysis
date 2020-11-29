@@ -1,5 +1,14 @@
 # run_analysis
 
+The dataset includes the following files:
+=========================================
+
+- 'README.rm'
+- 'CodeBook.rm': Shows information about the variables used
+- 'run_analysis.R': script used to generate the tidy data set called "run_analysis_tidy_dataset.txt"
+- 'run_analysis_tidy_dataset.txt': the tidy data set
+
+
 The Script run_analysis.R does the following:
 #defines the working directory and url for the data
 #downloads and unzips the data
