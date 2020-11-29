@@ -62,3 +62,13 @@ test_train_final<-dplyr::select(test_train, contains(c("Subject","Activity", "me
 #create a txt file
 run_analysis_tidy_dataset<-write.table(test_train_final, file = "run_analysis_tidy_dataset.txt", row.names = FALSE)
 
+
+#create second data set
+# First, group data by activity and subject
+grouped<- group_by(test_train_final, Activity, Subject)
+
+# Second, extract the average of each variable
+summary_dataset <- summarise_all(grouped, funs(mean))
+
+# Write tydi data to output file
+write.table(summary_dataset, file = "./second_tidyDataset.txt", row.names = FALSE)
