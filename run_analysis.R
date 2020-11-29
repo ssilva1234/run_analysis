@@ -56,9 +56,9 @@ names(test_train)<-gsub("angle", "Angle", names(test_train))
 names(test_train)<-gsub("gravity", "Gravity", names(test_train))
 
 #select mean and std
-test_train_final<-select(test_train, contains(c("Subject","Activity", "mean", "std")))
+library(dplyr)
+test_train_final<-dplyr::select(test_train, contains(c("Subject","Activity", "mean", "std")))
 
 #create a txt file
-library(readr)
-run_analysis_tidy_dataset<-write_tsv(test_train_final, path = "run_analysis_tidy_dataset.txt")
+run_analysis_tidy_dataset<-write.table(test_train_final, file = "run_analysis_tidy_dataset.txt", row.names = FALSE)
 
